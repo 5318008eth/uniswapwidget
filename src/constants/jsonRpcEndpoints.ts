@@ -12,29 +12,18 @@ import { SupportedChainId } from './chains'
  */
 export const JSON_RPC_FALLBACK_ENDPOINTS: Record<SupportedChainId, string[]> = {
   [SupportedChainId.MAINNET]: [
-    // "Safe" URLs
-    'https://cloudflare-eth.com',
     // "Fallback" URLs
+    'https://eth.llamarpc.com/',
+    'https://1rpc.io/eth',
     'https://rpc.ankr.com/eth',
-    'https://eth-mainnet.public.blastapi.io',
+    'https://eth.meowrpc.com/',
   ],
-  [SupportedChainId.ROPSTEN]: [
+  [SupportedChainId.SEPOLIA]: [
     // "Fallback" URLs
-    'https://rpc.ankr.com/eth_ropsten',
-  ],
-  [SupportedChainId.RINKEBY]: [
-    // "Fallback" URLs
-    'https://rinkeby-light.eth.linkpool.io/',
-  ],
-  [SupportedChainId.GOERLI]: [
-    // "Safe" URLs
-    'https://rpc.goerli.mudit.blog/',
-    // "Fallback" URLs
-    'https://rpc.ankr.com/eth_goerli',
-  ],
-  [SupportedChainId.KOVAN]: [
-    // "Fallback" URLs
-    'https://eth-kovan.public.blastapi.io',
+    'https://1rpc.io/sepolia',
+    'https://rpc.sepolia.org/',
+    'https://rpc2.sepolia.org/',
+    'https://ethereum-sepolia-rpc.publicnode.com/',
   ],
   [SupportedChainId.POLYGON]: [
     // "Safe" URLs
@@ -47,52 +36,47 @@ export const JSON_RPC_FALLBACK_ENDPOINTS: Record<SupportedChainId, string[]> = {
     'https://matic-testnet-archive-rpc.bwarelabs.com',
   ],
   [SupportedChainId.ARBITRUM_ONE]: [
-    // "Safe" URLs
-    'https://arb1.arbitrum.io/rpc',
     // "Fallback" URLs
+    'https://arbitrum.llamarpc.com',
+    'https://1rpc.io/arb',
     'https://arbitrum.public-rpc.com',
+    'https://arbitrum.drpc.org/',
+    'https://arbitrum-one.publicnode.com/',
   ],
-  [SupportedChainId.ARBITRUM_RINKEBY]: [
+  [SupportedChainId.ARBITRUM_SEPOLIA]: [
     // "Safe" URLs
-    'https://rinkeby.arbitrum.io/rpc',
+    'https://sepolia-rollup.arbitrum.io/rpc',
+    // "Fallback" URLs
+    'https://endpoints.omniatech.io/v1/arbitrum/sepolia/public',
   ],
   [SupportedChainId.OPTIMISM]: [
-    // "Safe" URLs
-    'https://mainnet.optimism.io/',
     // "Fallback" URLs
-    'https://rpc.ankr.com/optimism',
+    'https://optimism.llamarpc.com',
+    'https://1rpc.io/op',
+    'https://optimism.drpc.org/',
+    'https://optimism-rpc.publicnode.com/',
   ],
-  [SupportedChainId.OPTIMISM_GOERLI]: [
+  [SupportedChainId.OPTIMISM_SEPOLIA]: [
     // "Safe" URLs
-    'https://goerli.optimism.io',
-  ],
-  [SupportedChainId.CELO]: [
-    // "Safe" URLs
-    'https://forno.celo.org',
-  ],
-  [SupportedChainId.CELO_ALFAJORES]: [
-    // "Safe" URLs
-    'https://alfajores-forno.celo-testnet.org',
-  ],
-  [SupportedChainId.BNB]: [
-    // "Safe" URLs
-    'https://endpoints.omniatech.io/v1/bsc/mainnet/public',
-    'https://bsc-mainnet.gateway.pokt.network/v1/lb/6136201a7bad1500343e248d',
-    'https://1rpc.io/bnb',
-    'https://bsc-dataseed3.binance.org',
-    'https://bsc-dataseed2.defibit.io',
-    'https://bsc-dataseed1.ninicoin.io',
-    'https://binance.nodereal.io',
-    'https://bsc-dataseed4.defibit.io',
-    'https://rpc.ankr.com/bsc',
+    'https://sepolia.optimism.io/',
+    // "Fallback" URLs
+    'https://endpoints.omniatech.io/v1/op/sepolia/public',
+    'https://optimism-sepolia.drpc.org/',
   ],
   [SupportedChainId.BASE]: [
     // "Safe" URLs
-    'https://mainnet.base.org',
+    'https://mainnet.base.org/',
     'https://base.gateway.tenderly.co',
-    'https://base.publicnode.com',
+    'https://base-rpc.publicnode.com/',
     // "Fallback" URLs
+    'https://base.llamarpc.com/',
     'https://1rpc.io/base',
-    'https://base.meowrpc.com',
+    'https://base.meowrpc.com/',
+  ],
+  [SupportedChainId.BASE_SEPOLIA]: [
+    // "Safe" URLs
+    'https://sepolia.base.org/',
+    // "Fallback" URLs
+    'https://base-sepolia-rpc.publicnode.com/',
   ],
 }

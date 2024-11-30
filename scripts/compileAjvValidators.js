@@ -7,14 +7,20 @@ const standaloneCode = require('ajv/dist/standalone').default
 const addFormats = require('ajv-formats')
 const schema = require('@uniswap/token-lists/dist/tokenlist.schema.json')
 
+// Ensure __generated__ directory exists
+const generatedDir = path.join(__dirname, '../src/__generated__')
+if (!fs.existsSync(generatedDir)) {
+  fs.mkdirSync(generatedDir, { recursive: true })
+}
+
 const ajv = new Ajv({ code: { source: true, esm: true } })
 addFormats(ajv)
 const validate = ajv.compile(schema)
 let moduleCode = standaloneCode(ajv, validate)
-fs.writeFileSync(path.join(__dirname, '../src/__generated__/validateTokenList.js'), moduleCode)
+fs.writeFileSync(path.join(generatedDir, 'validateTokenList.js'), moduleCode)
 
 const ajv2 = new Ajv({ code: { source: true, esm: true } })
 addFormats(ajv2)
 const validate2 = ajv2.compile({ ...schema, required: ['tokens'] })
 let moduleCode2 = standaloneCode(ajv2, validate2)
-fs.writeFileSync(path.join(__dirname, '../src/__generated__/validateTokens.js'), moduleCode2)
+fs.writeFileSync(path.join(generatedDir, 'validateTokens.js'), moduleCode2)
